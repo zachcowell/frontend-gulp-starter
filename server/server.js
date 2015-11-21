@@ -34,7 +34,16 @@ var auth = function(req, res, next) {
   }
 };
 
-app.use(auth);
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+
+
+// app.use(auth);
+app.use(allowCrossDomain);
 app.use(logger('dev'));
 
 //change to point to your directory that you wil be serving out of most likey build or dist
@@ -49,6 +58,15 @@ app.set('port', process.env.PORT || config.port);
 app.get('/', auth, function(req, res) {
   res.send(200, 'Authenticated');
 });
+
+app.get('/test', function(req, res){
+  res.send(200, 'Test');
+})
+
+/**
+ * LEFT OFF HERE.
+ */
+require('./routes.js');
 
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on %d, in %s mode',
