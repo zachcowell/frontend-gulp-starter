@@ -59,14 +59,7 @@ app.get('/', auth, function(req, res) {
   res.send(200, 'Authenticated');
 });
 
-app.get('/test', function(req, res){
-  res.send(200, 'Test');
-})
-
-/**
- * LEFT OFF HERE.
- */
-require('./routes.js');
+require('./routes.js')(app);
 
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on %d, in %s mode',
