@@ -10,7 +10,6 @@ gulp.task('build', function(callback) {
       'html',
       'scss',
       'scripts',
-      'riot',
       'images',
       'extras',
       'bower',

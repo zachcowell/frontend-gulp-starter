@@ -10,7 +10,6 @@ gulp.task('watch', ['browserSync'], function() {
   // Currently scripts watches js,hbs,json see config
   gulp.watch(config.scripts, ['scripts']);
   gulp.watch(config.images, ['images']);
-  gulp.watch(config.tags, ['riot']);
   gulp.watch(config.fonts, ['fonts']);
   gulp.watch(config.extras, ['extras']);
 });
