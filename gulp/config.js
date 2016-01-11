@@ -46,7 +46,6 @@ module.exports = {
     files: [
       dist + '/css/*.css',
       dist + '/js/*.js',
-      dist + '/tags/*.js',
       dist + '/img/*',
       dist + '/fonts/*'
     ]
@@ -77,7 +76,6 @@ module.exports = {
     html: app + '/html/**/*.html',
     sass: app + '/scss/**/*.scss',
     scripts: app + '/js/**/*.js',
-    tags: app + '/tags/**/*.tag',
     fonts: app + '/fonts/**/*',
     images: app + '/img/**/*.{jpg,jpeg,png,gif,svg}',
     extras: app + '/*.{txt,ico}'
